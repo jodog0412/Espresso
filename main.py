@@ -1,23 +1,24 @@
-#1. Prepare
+"""1. Prepare"""
 # pip install --upgrade diffusers accelerate transformers openai xformers
-from function import *
+from image_func import *
+from text_func import *
 openai.api_key="" #여러분의 openai api key를 입력해주세요.
 
 input='making vegan burger'
 
-#2. text generation
-## [method 1]
-# inputs=text_generation(input)
-# idea_text=inputs.idea_text()
-# stp_text=inputs.stp_text()
-# content_text,keyword=inputs.content_text()
+"""2. idea introduction"""
+idea_txt,idea_key=idea(input).returns()
+logo=idea_image(idea_key)
 
-## [method 2]
-idea_text,stp_text,(content_text,keyword)=text_generation(input).returns()
+"""3. content generation"""
+stp,(content_txt,content_key)=content(input).returns()
+content_img=content_image(content_key)
 
-#3. image generation
-images=image_generation(keyword).implement()
+"""4. Output"""
+idea_output=post_process(logo,idea_txt)
+idea_grid=idea_output.returns() #Returns output image
+# idea_output.show() #Print output image and text
 
-# #4. Show Output
-grid,sentence=output_process(images,content_text).returns() #Return output
-output_process(images,content_text).show() #Show output
+content_output=post_process(content_img,content_txt)
+content_grid=content_output.returns()
+# content_output.show()
