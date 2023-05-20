@@ -82,36 +82,33 @@ class image_generation:
         pipeline.enable_xformers_memory_efficient_attention()
         self.pipeline=pipeline
 
-def idea_image(input):
-    initial=image_generation(input)
-    pipeline=initial.pipeline
-    load_lora_weights(pipeline, 
+    def idea_image(self):
+        pipeline=self.pipeline
+        load_lora_weights(pipeline, 
                       checkpoint_path="logo_v1-000012.safetensors", 
                       multiplier=0.35, 
                       device='cuda', 
                       dtype=torch.float16)
-    pos="(masterpiece:1.2), best quality, high resolution, logo, 2d, white background, simple background"
-    neg="(worst quality, low quality:1.4), 3d"
-    images = pipeline(num_inference_steps=30, 
-                      prompt=pos+','+input,
-                      negative_prompt=neg,
-                      num_images_per_prompt=8).images
-    return images
-    
-def content_image(input):
-    initial=image_generation(input)
-    pipeline=initial.pipeline
-    pos="masterpiece, raw photo, extremely detailed skin, extremely detailed face, 8k uhd, \
-        dslr, soft lighting,  film grain, Fujifilm XT3, instagram, realstic"
-    neg="(deformed iris, deformed pupils, semi-realistic, cgi, 3d, render, sketch, cartoon, drawing, anime, mutated hands and fingers:1.4), \
-        (deformed, distorted, disfigured:1.3), poorly drawn, bad anatomy, wrong anatomy, extra limb, missing limb, floating limbs, \
-            disconnected limbs, mutation, mutated, ugly, disgusting, amputation,\
-                (nsfw:2), (sexual content:2), (nude:2)"
-    images = pipeline(num_inference_steps=30, 
-                      prompt=pos+','+input,
-                      negative_prompt=neg,
-                      num_images_per_prompt=8).images
-    return images
+        pos="(masterpiece:1.2), best quality, high resolution, logo, 2d, white background, simple background"
+        neg="(worst quality, low quality:1.4), 3d"
+        images = pipeline(num_inference_steps=30, 
+                        prompt=pos+','+self.input,
+                        negative_prompt=neg,
+                        num_images_per_prompt=8).images
+        return images
+    def content_image(self):
+        pipeline=self.pipeline
+        pos="masterpiece, raw photo, extremely detailed skin, extremely detailed face, 8k uhd, \
+            dslr, soft lighting,  film grain, Fujifilm XT3, instagram, realstic"
+        neg="(deformed iris, deformed pupils, semi-realistic, cgi, 3d, render, sketch, cartoon, drawing, anime, mutated hands and fingers:1.4), \
+            (deformed, distorted, disfigured:1.3), poorly drawn, bad anatomy, wrong anatomy, extra limb, missing limb, floating limbs, \
+                disconnected limbs, mutation, mutated, ugly, disgusting, amputation,\
+                    (nsfw:2), (sexual content:2), (nude:2)"
+        images = pipeline(num_inference_steps=30, 
+                        prompt=pos+','+self.input,
+                        negative_prompt=neg,
+                        num_images_per_prompt=8).images
+        return images
 
 class post_process():
     def __init__(self,image,sentence):

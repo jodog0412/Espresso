@@ -12,7 +12,7 @@ def answer(prompt:str):
         result=completion.choices[0].message["content"]
         return result
 
-class text_generation:
+class text_generation: 
     def __init__(self,input:str):
         self.input=input
         self.roleplay=f"You're a marketing assistant.\

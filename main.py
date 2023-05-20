@@ -8,11 +8,11 @@ input='making vegan burger'
 
 """2. idea introduction"""
 idea_txt,idea_key=idea(input).returns()
-logo=idea_image(idea_key)
+logo=image_generation(idea_key).idea_image()
 
 """3. content generation"""
 stp,(content_txt,content_key)=content(input).returns()
-content_img=content_image(content_key)
+content_img=image_generation(content_key).content_image()
 
 """4. Output"""
 idea_output=post_process(logo,idea_txt)
