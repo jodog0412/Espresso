@@ -72,4 +72,3 @@ class content(text_generation):
     
     def returns(self):
         inputs=content(self.input)
-        return inputs.strategy(),inputs.introduction()
