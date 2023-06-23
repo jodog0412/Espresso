@@ -1,4 +1,4 @@
-# Espresso-Marketing-Assistant
+# Espresso
 Team project for the lecture 'AI융합캡스톤과 창업' in Sogang University.
 ## Member
 * 이현성 : 팀장, AI 애플리케이션 제작
