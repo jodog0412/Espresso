@@ -13,7 +13,7 @@ Original file is located at
 3. Output: 그림(images)+묘사문(sentence)
 """
 import torch
-from diffusers import DiffusionPipeline
+from diffusers import DiffusionPipeline, DPMSolverMultistepScheduler
 from safetensors.torch import load_file
 from collections import defaultdict
 from PIL import Image
@@ -78,7 +78,8 @@ class image_generation:
     def __init__(self,input:str):
         self.input=input
         repo_id="SG161222/Realistic_Vision_V2.0"
-        pipeline=DiffusionPipeline.from_pretrained(repo_id, torch_dtype=torch.float16).to("cuda")
+        scheduler = DPMSolverMultistepScheduler.from_pretrained(repo_id, subfolder="scheduler")
+        pipeline=DiffusionPipeline.from_pretrained(repo_id, scheduler=scheduler, torch_dtype=torch.float16).to("cuda")
         pipeline.enable_xformers_memory_efficient_attention()
         self.pipeline=pipeline
 
@@ -94,40 +95,51 @@ class image_generation:
         images = pipeline(num_inference_steps=30, 
                         prompt=pos+','+self.input,
                         negative_prompt=neg,
+                        guidance_scale=8,
                         num_images_per_prompt=8).images
         return images
     def content_image(self):
         pipeline=self.pipeline
-        pos="masterpiece, raw photo, extremely detailed skin, extremely detailed face, 8k uhd, \
+        pos="masterpiece, best quality, raw photo, extremely detailed skin, extremely detailed face, 8k uhd, \
             dslr, soft lighting,  film grain, Fujifilm XT3, instagram, realstic"
         neg="(deformed iris, deformed pupils, semi-realistic, cgi, 3d, render, sketch, cartoon, drawing, anime, mutated hands and fingers:1.4), \
             (deformed, distorted, disfigured:1.3), poorly drawn, bad anatomy, wrong anatomy, extra limb, missing limb, floating limbs, \
                 disconnected limbs, mutation, mutated, ugly, disgusting, amputation,\
-                    (nsfw:2), (sexual content:2), (nude:2)"
+                    (nsfw:2), (sexual content:2), (nude:2), (topless:2)"
         images = pipeline(num_inference_steps=30, 
                         prompt=pos+','+self.input,
                         negative_prompt=neg,
+                        guidance_scale=8,
                         num_images_per_prompt=8).images
         return images
+def image_grid(imgs, rows=2, cols=4):
+    assert len(imgs) == rows*cols
 
-class post_process():
-    def __init__(self,image,sentence):
-        def image_grid(imgs, rows=2, cols=4):
-            assert len(imgs) == rows*cols
+    w, h = imgs[0].size
+    grid = Image.new('RGB', size=(cols*w, rows*h))
+    
+    for i, img in enumerate(imgs):
+        grid.paste(img, box=(i%cols*w, i//cols*h))
+    return grid
 
-            w, h = imgs[0].size
-            grid = Image.new('RGB', size=(cols*w, rows*h))
+# class post_process():
+#     def __init__(self,image,sentence):
+#         def image_grid(imgs, rows=2, cols=4):
+#             assert len(imgs) == rows*cols
+
+#             w, h = imgs[0].size
+#             grid = Image.new('RGB', size=(cols*w, rows*h))
             
-            for i, img in enumerate(imgs):
-                grid.paste(img, box=(i%cols*w, i//cols*h))
-            return grid
-        self.image=image
-        self.grid=image_grid(image)
-        self.sentence=sentence
+#             for i, img in enumerate(imgs):
+#                 grid.paste(img, box=(i%cols*w, i//cols*h))
+#             return grid
+#         self.image=image
+#         self.grid=image_grid(image)
+#         self.sentence=sentence
         
-    def returns(self):
-        return self.grid
+#     def returns(self):
+#         return self.grid
 
-    def show(self):
-        self.grid.show()
-        print(self.sentence)
+#     def show(self):
+#         self.grid.show()
+#         print(self.sentence)
