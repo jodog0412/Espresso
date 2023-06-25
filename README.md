@@ -5,10 +5,11 @@ Team project for the lecture `AI융합캡스톤과 창업`.
 * __Marketing & Advertisement assistance web application__
 * `GPT-3.5`, `Stable-Diffusion`
 
-## Process
+## Usage-Example
+![result](https://github.com/jodog0412/Espresso/assets/83653380/9f9eb07f-b111-4679-a0db-5f186b5cfcb2)
 1. Enter a input.
-2. Write marketing strategy using ChatGPT.
-3. Generate logo, catchphrase, and advertisement content based on marketing strategy by ChatGPT, Stable-Diffusion.
+2. Write marketing strategy.
+3. Generate logo, catchphrase, and advertisement content based on marketing strategy.
   
 ## Feature
 * __Efficiency__  
@@ -16,9 +17,6 @@ Team project for the lecture `AI융합캡스톤과 창업`.
   (Time consumption : 3m 45s)
 * __Based on strategy__  
   Generate contents based on STP marketing strategy.
-
-## Usage-Example
-
 
 ## Tech-Stack
 ![image](https://github.com/jodog0412/Espresso/assets/83653380/83741b37-3791-4894-a273-a145a7007860)  
