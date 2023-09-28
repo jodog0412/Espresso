@@ -3,9 +3,9 @@ from django.http import HttpResponse
 import os
 import sys
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
-from text_func import *
-from image_func import *
-from forms import InputForm
+from func.text_func import *
+from func.image_func import *
+# from forms import InputForm
 # Create your views here.
 class ResultView:
     def __init__(self, request):
