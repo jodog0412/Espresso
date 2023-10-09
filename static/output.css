@@ -1,0 +1,105 @@
+@charset 'utf-8';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+
+/* body */
+
+body {
+    width: 900px;
+    margin: 0 auto;
+}
+
+/* header */
+
+header {
+    display: flex;
+    justify-content: left;
+}
+
+.logo img {
+    margin-top: 30px;
+    width: 300px;
+}
+
+/* main */
+
+main {
+    margin-top: 30px;
+    display: flex;
+    width: 900px;
+    flex-direction: column;
+}
+
+.button {
+    margin-left: 80px;
+    height: 60px;
+    width: 740px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+.button button {
+
+    display: block;
+    width: 180px;
+    height: 60px;
+    background-color: #945F4F;
+    border: none;
+
+    font-family: 'Noto Serif KR';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    color: #FFFFFF;
+
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.contentBox {
+    margin-top: 20px;
+    width: 900px;
+    background: #EDDFD4;
+    position: relative;
+    display: flex; 
+    align-items: flex-start; 
+    padding: 30px; 
+    margin-bottom: 100px; 
+}
+
+.contentText {
+    font-family: 'Noto Serif KR';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: #000000;
+    flex: 1; 
+    margin-right: 20px; 
+    overflow: auto; 
+}
+
+.image-content img {
+    width: 100%;
+}
+
+.text-content {
+    margin-top: 20px;
+    width: 100%;
+}

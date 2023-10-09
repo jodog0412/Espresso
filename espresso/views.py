@@ -1,42 +1,32 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-import os
-import sys
-sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+from django.shortcuts import render, redirect
+import re
 from func.text_func import *
 from func.image_func import *
-# from forms import InputForm
+
 # Create your views here.
-class ResultView:
-    def __init__(self, request):
+openai.api_key="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" #Enter your OPENAI api key.
+
+class Views:
+    def index(request):
         if request.method=='POST':
-            form=InputForm(request.POST)
-            if form.is_valid():
-                input_txt=form.cleaned_data['input_txt']
-                template=content(input_txt)
-                self.input_txt=input_txt
-                self.stp_txt, self.stp_key=template.strategy()
-                self.idea_txt=template.idea(self.stp_key)
-                self.content_txt, self.content_key=template.content(self.stp_key)
-        else: 
-            form=InputForm()
-            return render(request, 'input.html', {'form':form})
+            inputs = request.POST.get('myTextarea')
+            request.session['data']=inputs
+            return redirect('output')
+        return render(request, 'espresso/index.html')
+    
+    def loading(request):
+        if request.method=='POST':
+            return redirect('output')
+        return render(request, 'espresso/loading.html')
 
-    def idea_introduction(self, request):
-        return (request, 'webapp\output.html', {'idea_txt':self.idea_txt})
-    
-    def idea_logo(self, request):
-        logo=image_generation(self.input_txt).idea_image()
-        grid=image_grid(logo)
-        return (request, 'webapp\output.html', {'idea_logo':grid})
-
-    def marketing_strategy(self, request):
-        return (request, 'webapp\output.html', {'strategy':self.stp_txt})
-    
-    def content_introduction(self, request):
-        return (request, 'webapp\output.html', {'content_txt':self.content_txt})
-    
-    def content_image(self, request):
-        img=image_generation(self.content_key).content_image()
-        grid=image_grid(img)
-        return (request, 'webapp\output.html', {'content_img':grid})
+    def output(request):
+        inputs=request.session['data']
+        writer=text_gen(inputs)        
+        plan_txt, plan_key =writer.strategy()
+        design_txt=writer.design(plan_key)
+        ad_txt, ad_key=writer.ad(plan_key)
+        ad_txt=ad_txt.replace('.','.\n').replace('!','.\n')
+        context={'plan_txt':'\n'+plan_txt,
+                 'design_txt':'\n'+design_txt,
+                 'ad_txt':'\n'+ad_txt}
+        return render(request, 'espresso/output.html', context)
