@@ -4,7 +4,7 @@ from func.text_func import *
 from func.image_func import *
 
 # Create your views here.
-openai.api_key="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" #Enter your OPENAI api key.
+openai.api_key="" #Enter your OPENAI api key.
 
 class Views:
     def index(request):
