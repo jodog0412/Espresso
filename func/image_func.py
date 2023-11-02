@@ -84,7 +84,7 @@ def img_grid(imgs, rows=2, cols=3):
         grid.paste(img, box=(i%cols*w, i//cols*h))
     return grid
 
-class image_gen:
+class imageGen:
     def __init__(self,input:str):
         self.input=input
         repo_id="SG161222/Realistic_Vision_V2.0"

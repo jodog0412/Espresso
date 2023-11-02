@@ -6,14 +6,15 @@ openai.api_key="" #여러분의 openai api key를 입력해주세요.
 
 ''' 2. Initialize '''
 inputs='Europe tour package'
-writer, painter = text_gen(inputs), image_gen(inputs)
+writer, painter = textGen(inputs), imageGen(inputs)
 
-''' 3. Strategy&Design '''
-plan_txt, plan_key =writer.strategy()
-design_txt=writer.design(plan_key)
-logo=painter.design()
+''' 3. Marketing '''
+marketing_text, marketing_keywrd = writer.marketing()
+
+''' 4. Design '''
+design_text, logo = writer.design(marketing_keywrd), painter.design(marketing_keywrd)
 
 ''' 4. Ad '''
-ad_txt, ad_key=writer.ad(plan_key)
-ad_img=painter.ad()
+ad_text, ad_keywrd = writer.ad(marketing_keywrd)
+ad_img=painter.ad(ad_keywrd)
 
