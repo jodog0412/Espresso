@@ -1,6 +1,6 @@
 # Espresso
 Team project for the lecture `AI융합캡스톤과 창업`.  
-Awarded Excellence prize in '2023-1 서강융합기술경진대회`.
+Awarded excellence prize in '2023-1 서강융합기술경진대회`.
 
 ## Introduction
 * __Enterpreneur Assistance Web Application__
