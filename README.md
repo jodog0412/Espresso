@@ -1,15 +1,16 @@
 # Espresso
 Team project for the lecture `AI융합캡스톤과 창업`.
+Awarded Excellence prize in '2023-1 서강융합기술경진대회`.
 
 ## Introduction
-* __Marketing & Advertisement assistance web application__
-* `GPT-3.5`, `Stable-Diffusion`
+* __Enterpreneur Assistance Web Application__
+* `GPT 3.5`, `Stable-Diffusion`
 
 ## Usage-Example
 ![result](https://github.com/jodog0412/Espresso/assets/83653380/9f9eb07f-b111-4679-a0db-5f186b5cfcb2)  
 1. Enter a input.
-2. Write marketing strategy.
-3. Generate logo, catchphrase, and advertisement content based on marketing strategy.  
+2. Write business idea.
+3. Generate logo, catchphrase, and ad based on marketing strategy.  
   
 ## Feature
 * __Efficiency__  
