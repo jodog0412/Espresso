@@ -52,7 +52,7 @@ python manage.py runserver
 ❌  Website development
 
 ## 🙍‍♂️ Member
-* 이현성 : 팀장, AI 애플리케이션 제작
+* 이현성 : 팀장, AI 애플리케이션 개발
 * 이해온 : 웹디자인
 * 임동준 : UI/UX
 * 오홍준 : 공문서 작성, 프레젠테이션
