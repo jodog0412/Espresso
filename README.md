@@ -23,7 +23,7 @@ git clone https://github.com/jodog0412/espresso
 ```git
 python manage.py runserver
 ```
-## Usage-Example
+## Sample
 ![result](https://github.com/jodog0412/Espresso/assets/83653380/9f9eb07f-b111-4679-a0db-5f186b5cfcb2)  
 1. Enter a input.
 2. Write business idea.
