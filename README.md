@@ -19,9 +19,10 @@ Generate contents based on STP marketing strategy.
 | Completed   | O    | O   | X                        |
 | Stabiltiy   | High | Medium(maybe some bugs) | High |
 | Web deploy  | X    | O   | O                        |
-## Colab    
-☕ [espresso_colab](https://colab.research.google.com/drive/1-rpJjPArcVYP5JfD1NIlNdkQx2b9lqxG#scrollTo=nX2KcS3gmlim)    
-## Local
+## ☁ Colab    
+Enter this link  
+[ESPRESSO_COLAB](https://colab.research.google.com/drive/1-rpJjPArcVYP5JfD1NIlNdkQx2b9lqxG#scrollTo=nX2KcS3gmlim)    
+## 👨‍💻 Local
 1. Download repository to local    
 ```git
 git clone https://github.com/jodog0412/espresso
