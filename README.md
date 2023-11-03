@@ -37,7 +37,7 @@ python manage.py runserver
 3. Generate logo, catchphrase, and ad based on marketing strategy.  
 
 # 🛠 Tech-Stack
-![image](https://github.com/jodog0412/espresso/assets/83653380/2702f4a3-0a7b-466b-be74-8dc3401d93e8)  
+![image](https://github.com/jodog0412/espresso/assets/83653380/e3103f2f-3050-4ff7-81cd-d7581a29d522)  
 * Stable-diffusion  
   * Checkpoint: [Realistic_Vision_v1.4](https://huggingface.co/SG161222/Realistic_Vision_V1.4)
   * LoRA(Low-Rank Adaption) : [Anylogo_v1.0](https://civitai.com/models/57452/anylogo)
