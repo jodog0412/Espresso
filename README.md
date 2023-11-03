@@ -42,16 +42,11 @@ python manage.py runserver
   * Checkpoint: [Realistic_Vision_v1.4](https://huggingface.co/SG161222/Realistic_Vision_V1.4)
   * LoRA(Low-Rank Adaption) : [Anylogo_v1.0](https://civitai.com/models/57452/anylogo)
 
-# ▶ Progress
-✅  AI  
-* ChatGPT: prompt engineering
-* Stable-diffusion : stable-diffusion fine tuning
-  
-✅  Website design  
-  
-❌  Website development
-
-## 🙍‍♂️ Member
+# 🛤 Procedure
+![image](https://github.com/jodog0412/espresso/assets/83653380/c2e98be8-25a0-4267-b412-09098708ee78)  
+* Done: Colab, Local
+* In progress: GCP
+# 🙍‍♂️ Member
 * 이현성 : 팀장, AI 애플리케이션 개발
 * 이해온 : 웹디자인
 * 임동준 : UI/UX
