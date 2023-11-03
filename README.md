@@ -7,6 +7,11 @@ Awarded excellence prize in `2023-1 서강융합기술경진대회`.
 * `GPT 3.5`, `Stable-Diffusion`
 
 ## ❓ How to use
+| Environment | Colab | Local | GCP              |
+|:-----------:|:-----:|:-----:|:---:|
+| Completed   |  O    |   O   |   X              |
+| Stabiltiy   | High  | Medium(maybe some bugs) ||
+| Web deploy  |  X    |   O   |   O              |
 ### Colab    
 ☕ [espresso_colab](https://colab.research.google.com/drive/1-rpJjPArcVYP5JfD1NIlNdkQx2b9lqxG#scrollTo=nX2KcS3gmlim)    
 ### Local
