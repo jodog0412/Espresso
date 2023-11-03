@@ -1,4 +1,4 @@
-# Espresso
+# ☕ Espresso
 Team project for the lecture `AI융합캡스톤과 창업`.  
 Awarded excellence prize in `2023-1 서강융합기술경진대회`.
 
@@ -6,6 +6,18 @@ Awarded excellence prize in `2023-1 서강융합기술경진대회`.
 * __Enterpreneur Assistance Web Application__
 * `GPT 3.5`, `Stable-Diffusion`
 
+## ❓ How to use
+### Colab    
+☕ [espresso_colab](https://colab.research.google.com/drive/1-rpJjPArcVYP5JfD1NIlNdkQx2b9lqxG#scrollTo=nX2KcS3gmlim)    
+### Local
+1. Download repository to local    
+```git
+git clone https://github.com/jodog0412/espresso
+```
+2. Run manage.py in your local repository(espresso)    
+```git
+python manage.py runserver
+```
 ## Usage-Example
 ![result](https://github.com/jodog0412/Espresso/assets/83653380/9f9eb07f-b111-4679-a0db-5f186b5cfcb2)  
 1. Enter a input.
