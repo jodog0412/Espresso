@@ -20,7 +20,7 @@ Generate contents based on STP marketing strategy.
 | Stabiltiy   | High | Medium(maybe some bugs) | High |
 | Web deploy  | X    | O   | O                        |
 ## ☁ Colab    
-Enter this link  
+Enter below link.  
 [ESPRESSO_COLAB](https://colab.research.google.com/drive/1-rpJjPArcVYP5JfD1NIlNdkQx2b9lqxG#scrollTo=nX2KcS3gmlim)    
 ## 👨‍💻 Local
 1. Download repository to local    
