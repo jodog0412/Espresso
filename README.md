@@ -3,7 +3,7 @@ Team project for the lecture `AI융합캡스톤과 창업`.
 Awarded excellence prize in `2023-1 서강융합기술경진대회`.
 
 # Introduction
-* __Enterpreneur Assistance Web Application__
+* __Business Assistance Web Application__
 * `GPT 3.5`, `Stable-Diffusion`
 
 # Feature
