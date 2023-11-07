@@ -1,7 +1,7 @@
 import openai
 def botRespond(prompt:str):
     completion = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
+        model="gpt-3.5-turbo-1106",
         messages=[
             {"role": "user", 
             "content": prompt}
@@ -22,7 +22,7 @@ class textGen(Config):
     def marketing(self):
         query="Write the STP strategy for the idea.\
         Use the following format:\
-        1. Market Segmemtation \
+        1. Market Segmemtation\
           - Demographic: <appropriate demographic market segmentation in one line>\
           - Psychographic: <appropriate psychographic market segmentation in one line>\
           - Behavioral: <appropriate behavioral market segmentation in one line>\

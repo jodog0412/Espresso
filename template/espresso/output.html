@@ -22,13 +22,13 @@
             <button id="button2" onclick="showContent('content2')">로고 및 문구</button>
             <button id="button3" onclick="showContent('content3')">SNS 컨텐츠</button>
         </div>
-
+        
         <div class="contentBox">
             <div class="contentText">
                 <div id="content1" class="content-section">
                     <!-- Django에서 받은 마케팅 전략 -->
-                    <pre class="text-content">
-                        {{plan_txt}}
+                    <pre id="text-content1" class="text-content">
+                        {{marketing_text}}
                     </pre>
                 </div>
                 
@@ -38,7 +38,7 @@
                         <img src="{% static 'image/IDEA.png' %}">
                     </div>
                     <pre class="text-content">
-                        {{design_txt}}
+                        {{design_text}}
                     </pre>
                 </div>
                 
@@ -47,8 +47,8 @@
                     <div class="image-content">
                         <img src="{% static 'image/SNS.png' %}">
                     </div>
-                    <pre class="text-content">
-                        {{ad_txt}}
+                    <pre id="text-content3" class="text-content">
+                        {{ad_text}}
                     </pre>
                 </div>                
             </div>
@@ -57,24 +57,25 @@
         
 
     <script>
-
         /* button 기능 구현 */
-        // 1. 클릭한 버튼 외 콘텐츠 숨기기 
+        
         function showContent(contentId) {
+        // 1. 모든 콘텐츠 스타일 감추기
         const contentSections = document.getElementsByClassName("content-section");
         for (let i = 0; i < contentSections.length; i++) {
             contentSections[i].style.display = "none";
         }
 
-        // 2. 선택 상태 해제되면 버튼 스타일 초기화
+        // 2. 모든 버튼 스타일 초기화
         const buttons = document.getElementsByTagName("button");
         for (let i = 0; i < buttons.length; i++) {
             buttons[i].classList.remove("active");
             buttons[i].style.backgroundColor = "#945F4F";
         }
 
-        // 3. 선택 상태 설정되면 버튼 스타일 지정 및 콘텐츠 보여 주기
+        // 3. 선택한 콘텐츠 보여주기 및 버튼 스타일 지정
         const selectedContent = document.getElementById(contentId);
+        selectedContent.style.fontFamily="Roboto";
         selectedContent.style.display = "block";
 
         const selectedButton = document.getElementById(`button${contentId.slice(-1)}`);
@@ -82,6 +83,8 @@
         selectedButton.style.backgroundColor = "#512615";
         }
 
+        
+        // 실행
         const initialContentId = "content1";
         showContent(initialContentId);
     </script>

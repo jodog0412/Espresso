@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
+import os
 import re
 from func.text_func import *
 from func.image_func import *
 
 # Create your views here.
-openai.api_key="" #Enter your OPENAI api key.
+openai.api_key=os.getenv("OPENAI_API_KEY") #Enter your OPENAI api key.
 
 class Views:
     def index(request):
@@ -21,12 +22,12 @@ class Views:
 
     def output(request):
         inputs=request.session['data']
-        writer=text_gen(inputs)        
-        plan_txt, plan_key =writer.strategy()
-        design_txt=writer.design(plan_key)
-        ad_txt, ad_key=writer.ad(plan_key)
-        ad_txt=ad_txt.replace('.','.\n').replace('!','.\n')
-        context={'plan_txt':'\n'+plan_txt,
-                 'design_txt':'\n'+design_txt,
-                 'ad_txt':'\n'+ad_txt}
+        writer=textGen(inputs)        
+        marketing_text, marketing_keywrd =writer.marketing()
+        design_text=writer.design(marketing_keywrd)
+        ad_text, ad_keywrd=writer.ad(marketing_keywrd)
+        ad_text=ad_text.replace('.','.\n').replace('!','!\n')
+        context={'marketing_text':'\n'+marketing_text,
+                 'design_text':'\n'+design_text,
+                 'ad_text':'\n'+ad_text}
         return render(request, 'espresso/output.html', context)
