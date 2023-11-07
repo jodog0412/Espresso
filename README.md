@@ -26,12 +26,12 @@ Generate contents based on STP marketing strategy.
 ```git
 git clone https://github.com/jodog0412/espresso
 ```
-2. Run manage.py in your local repository(espresso)    
+2. Download logo LoRA to your local repo(espresso) [Download link(GDrive)](https://drive.google.com/file/d/16Vf4M-EA6Kts0NhCDPx7Z0QzCrtjoKfM/view?usp=sharing)
+3. Run manage.py in your local repo  
 ```git
 python manage.py runserver
-```
-3. Download logo LoRA. [Download link(GDrive)](https://drive.google.com/file/d/16Vf4M-EA6Kts0NhCDPx7Z0QzCrtjoKfM/view?usp=sharing)
-3. Enter this path: ```http://127.0.0.1:8000/espresso/``` 
+```  
+4. Enter this path: ```http://127.0.0.1:8000/espresso/``` 
    
 # Sample
 ![result](https://github.com/jodog0412/Espresso/assets/83653380/9f9eb07f-b111-4679-a0db-5f186b5cfcb2)  
