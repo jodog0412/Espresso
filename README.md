@@ -30,6 +30,9 @@ git clone https://github.com/jodog0412/espresso
 ```git
 python manage.py runserver
 ```
+3. Download logo LoRA. [Download link(GDrive)](https://drive.google.com/file/d/16Vf4M-EA6Kts0NhCDPx7Z0QzCrtjoKfM/view?usp=sharing)
+3. Enter this path: ```http://127.0.0.1:8000/espresso/``` 
+   
 # Sample
 ![result](https://github.com/jodog0412/Espresso/assets/83653380/9f9eb07f-b111-4679-a0db-5f186b5cfcb2)  
 1. Enter a input.
@@ -39,8 +42,8 @@ python manage.py runserver
 # 🛠 Tech-Stack
 ![image](https://github.com/jodog0412/espresso/assets/83653380/e3103f2f-3050-4ff7-81cd-d7581a29d522)  
 * Stable-diffusion  
-  * Checkpoint: [Realistic_Vision_v1.4](https://huggingface.co/SG161222/Realistic_Vision_V1.4)
-  * LoRA(Low-Rank Adaption) : [Anylogo_v1.0](https://civitai.com/models/57452/anylogo)
+  * Checkpoint: [Realistic_Vision](https://huggingface.co/SG161222/Realistic_Vision_V5.1_noVAE)
+  * LoRA(Low-Rank Adaption) : [Anylogo](https://civitai.com/models/57452/anylogo)
 
 # 🛤 Procedure
 ![image](https://github.com/jodog0412/espresso/assets/83653380/c2e98be8-25a0-4267-b412-09098708ee78)  
