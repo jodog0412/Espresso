@@ -9,7 +9,9 @@ Awarded excellence prize in `2023-1 서강융합기술경진대회`.
 # Feature
 ## 🚀 __Efficient Generation__      
 Generate marketing contents efficiently.    
-(Time consumption : 3m)    
+|  | SD | DALL-E 3 |
+|:----------------:|:--:|:--------:|
+| Time consumption | 1 min   | 3 min  |  
 ## 📊 __Generation Based on marketing strategy__    
 Generate contents based on STP marketing strategy.
   
