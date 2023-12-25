@@ -28,28 +28,34 @@
                 <div id="content1" class="content-section">
                     <!-- Django에서 받은 마케팅 전략 -->
                     <pre id="text-content1" class="text-content">
-                        {{marketing_text}}
+                        {{marketingText}}
                     </pre>
                 </div>
                 
                 <div id="content2" class="content-section" style="display: none;">
                     <!-- Django에서 받은 로고 및 문구 -->
                     <div class="image-content">
-                        <img src="{% static 'image/IDEA.png' %}">
+                        <div>
+                        <!-- <img src="{% static 'image/IDEA.png' %}"> -->
+                        <img src={{logoImg}}>
+                        </div>
                     </div>
                     <pre class="text-content">
-                        {{design_text}}
+                        {{designText}}
                     </pre>
                 </div>
                 
                 <div id="content3" class="content-section" style="display: none;">
                     <!-- Django에서 받은 SNS 컨텐츠 -->
                     <div class="image-content">
-                        <img src="{% static 'image/SNS.png' %}">
+                        <div>
+                            <!-- <img src="{% static 'image/SNS.png' %}" width="100px"> -->
+                            <img src={{adImg}}>
+                        </div>
                     </div>
-                    <pre id="text-content3" class="text-content">
-                        {{ad_text}}
-                    </pre>
+                    <p id="text-content3" class="text-content">
+                        {{adText}}
+                    </p>
                 </div>                
             </div>
         </div>

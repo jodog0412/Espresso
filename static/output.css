@@ -78,7 +78,7 @@ main {
 
 .contentBox {
     margin-top: 20px;
-    width: 900px;
+    width: 800px;
     background: #EDDFD4;
     position: relative;
     display: flex; 
@@ -88,17 +88,21 @@ main {
 }
 
 .image-content img {
-    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+    display: flex; 
 }
 
 .text-content pre{
+    max-width: 100%;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 30px;
     line-height: 30px;
     color: #000000;
     flex: 1; 
     margin-right: 20px; 
-    overflow: auto; 
+    overflow: visible; 
+    display: flex; 
 }
