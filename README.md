@@ -4,7 +4,7 @@ Awarded excellence prize in `2023-1 서강융합기술경진대회`.
 
 # Introduction
 * __Business Assistance Web Application__
-* `GPT 3.5`, `Stable-Diffusion`
+* `GPT 3.5`, `DALL-E 3`
 
 # Feature
 ## 🚀 __Efficient Generation__      
