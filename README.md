@@ -16,11 +16,6 @@ Generate marketing contents efficiently.
 Generate contents based on STP marketing strategy.
   
 # ❓ How to use
-| Environment | Colab | Local | GCP                   |
-|:-----------:|:-----:|:-----:|:---:|
-| Completed   | O    | O   | X                        |
-| Stabiltiy   | High | Medium(maybe some bugs) | High |
-| Web deploy  | X    | O   | O                        |
 ## ☁ Colab      
 [Enter this Colab link](https://colab.research.google.com/drive/1-rpJjPArcVYP5JfD1NIlNdkQx2b9lqxG#scrollTo=nX2KcS3gmlim)    
 ## 👨‍💻 Local
@@ -28,7 +23,8 @@ Generate contents based on STP marketing strategy.
 ```git
 git clone https://github.com/jodog0412/espresso
 ```
-2. Download logo LoRA to your local repo(espresso) [Download link(GDrive)](https://drive.google.com/file/d/16Vf4M-EA6Kts0NhCDPx7Z0QzCrtjoKfM/view?usp=sharing)
+2. (Optional) If you wanna generate image using SD, download logo LoRA to your local repo(espresso)  
+[Download link(GDrive)](https://drive.google.com/file/d/16Vf4M-EA6Kts0NhCDPx7Z0QzCrtjoKfM/view?usp=sharing)
 3. Run manage.py in your local repo  
 ```git
 python manage.py runserver
