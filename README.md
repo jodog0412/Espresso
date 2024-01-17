@@ -45,8 +45,8 @@ python manage.py runserver
 
 # 🛤 Procedure
 ![image](https://github.com/jodog0412/espresso/assets/83653380/c2e98be8-25a0-4267-b412-09098708ee78)  
-* Done: Colab, Local
-* In progress: GCP
+* In progress: web application `deploy` on cloud platform  
+  
 # 🙍‍♂️ Member
 * 이현성 : 팀장, AI 애플리케이션 개발
 * 이해온 : 웹디자인
