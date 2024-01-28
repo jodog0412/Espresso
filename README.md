@@ -3,7 +3,7 @@ Team project for the lecture `AI융합캡스톤과 창업`.
 Awarded excellence prize in `2023-1 서강융합기술경진대회`.
 
 # Introduction
-* __marketing&advertising assistance web application using GPT 3.5 and DALL-E 3.__
+* __marketing&advertising assistance web application using GPT 3.5 and DALL-E-3.__
 * `GPT 3.5`, `DALL-E 3`, `Stable-Diffusion`
 
 # Feature
