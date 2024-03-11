@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
-from func.openai_func import *
-# 
+from openai_func import *
 
 class Views:
     def index(request):
