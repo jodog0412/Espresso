@@ -1,10 +1,8 @@
-from PIL import Image
-import requests
-from io import BytesIO
 import os
-import openai
 from openai import OpenAI
+from dotenv import load_dotenv
 
+load_dotenv(verbose=True)
 openai_api_key=os.getenv("OPENAI_API_KEY")
 class ContentGenerator:
     def __init__(self,inputs):
