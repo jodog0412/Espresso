@@ -16,17 +16,17 @@ class Views:
 
     def output(request):
         inputs=request.session['data']
-        generator=ContentGenerator(inputs)
-        marketingText=generator.getMarketingText()
-        designText=generator.getDesignText()
-        adText=generator.getAdText()
-        logoImg=generator.getLogoImage()
-        adImg=generator.getAdImage()
+        agent=MarketingAgent(inputs)
+        marketing_text=agent.write_marketing_strategy()
+        design_text=agent.write_idea_description()
+        ad_text=agent.write_advertisement()
+        logo_img=agent.draw_logo()
+        ad_img=agent.draw_ad_image()
         
-        context={'marketingText':'\n'+marketingText,
-                 'designText':'\n'+designText,
-                 'adText':'\n'+adText,
-                 'logoImg':logoImg,
-                 'adImg':adImg
+        context={'marketingText':'\n'+marketing_text,
+                 'designText':'\n'+design_text,
+                 'adText':'\n'+ad_text,
+                 'logoImg':logo_img,
+                 'adImg':ad_img
                  }
         return render(request, 'espresso/output.html', context)

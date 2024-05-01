@@ -1,11 +1,12 @@
 import os
-from openai import OpenAI
 from dotenv import load_dotenv
+from openai import OpenAI
 
 load_dotenv(verbose=True)
 openai_api_key=os.getenv("OPENAI_API_KEY")
-class ContentGenerator:
-    def __init__(self,inputs):
+
+class MarketingAgent:
+    def __init__(self,inputs:str):
         client = OpenAI(api_key=openai_api_key)
         client.chat.completions.create(model="gpt-3.5-turbo-1106",
                                        messages=[{"role": "system",
@@ -17,7 +18,7 @@ class ContentGenerator:
         self.client=client
 
 
-    def getMarketingText(self):
+    def write_marketing_strategy(self):
         client =self.client
         response = client.chat.completions.create(
             model="gpt-3.5-turbo-1106",
@@ -37,7 +38,7 @@ class ContentGenerator:
             )
         return response.choices[0].message.content
 
-    def getDesignText(self):
+    def write_idea_description(self):
         client =self.client
         response = client.chat.completions.create(
             model="gpt-3.5-turbo-1106",
@@ -54,7 +55,7 @@ class ContentGenerator:
             )
         return response.choices[0].message.content
 
-    def getAdText(self):
+    def write_advertisement(self):
         client =self.client
         response = client.chat.completions.create(
             model="gpt-3.5-turbo-1106",
@@ -69,7 +70,7 @@ class ContentGenerator:
             )
         return response.choices[0].message.content
 
-    def getAdImage(self):
+    def draw_ad_image(self):
         client =self.client
         response = client.images.generate(
             model="dall-e-3",
@@ -82,7 +83,7 @@ class ContentGenerator:
         # return Image.open(BytesIO(requests.get(image_url).content))
         return image_url
 
-    def getLogoImage(self):
+    def draw_logo(self):
         client =self.client
         response = client.images.generate(
             model="dall-e-3",
